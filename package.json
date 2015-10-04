@@ -1,6 +1,6 @@
 {
   "name": "amma-plugin-loader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Hapi plugin loader",
   "main": "index.js",
   "author": "Prashanth Pratapagiri <prashanth.p@outlook.com>",
