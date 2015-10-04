@@ -1,0 +1,42 @@
+{
+  "name": "amma-plugin-loader",
+  "version": "0.0.1",
+  "description": "Hapi plugin loader",
+  "main": "index.js",
+  "author": "Prashanth Pratapagiri <prashanth.p@outlook.com>",
+  "license": "MIT",
+  "keywords": [
+    "hapi",
+    "node",
+    "amma",
+    "amma-plugin-loader",
+    "plugin-loader"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prashanthjs/amma-plugin-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prashanthjs/amma-plugin-loader/issues"
+  },
+  "scripts": {
+    "test": "lab -t 100 test/unit-testing/index.test.js -v -C"
+  },
+  "dependencies": {
+    "hapi": "^8.8.0",
+    "hoek": "^2.14.0",
+    "items": "^1.1.0",
+    "lodash": "^3.10.0",
+    "object-path": "^0.9.2"
+  },
+  "devDependencies": {
+    "code": "^1.4.1",
+    "del": "^1.2.0",
+    "lab": "^5.8.0",
+    "sinon": "^1.15.4",
+    "gulp": "^3.8.11",
+    "gulp-lab": "^1.0.5",
+    "gulp-nodemon": "^2.0.3",
+    "tsd": "^0.6.3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": false,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false
+    },
+    "exclude": [
+        "node_modules",
+        "wwwroot"
+    ],
+    "filesGlob": [
+        "./**/*.ts",
+        "!node_modules/**/*.ts"
+    ],
+    "files": [
+        "./index.ts",
+        "./missing.d.ts",
+        "./test/unit-testing/index.test.ts",
+        "./test/unit-testing/test-sample-module/controller.ts",
+        "./test/unit-testing/test-sample-module/failure-run.ts",
+        "./test/unit-testing/test-sample-module/index.ts",
+        "./test/unit-testing/test-sample-module/success-run.ts"
+    ]
+}

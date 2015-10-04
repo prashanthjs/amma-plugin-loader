@@ -1,0 +1,7 @@
+{
+  "name": "test-sample-module",
+  "version": "0.0.1",
+  "description": "Sample for testing",
+  "main": "index.js",
+  "author": "Prashanth Pratapagiri <prashanth.p@outlook.com>"
+}
