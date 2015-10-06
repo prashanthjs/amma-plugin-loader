@@ -35,11 +35,9 @@
   "devDependencies": {
     "code": "^1.4.1",
     "del": "^1.2.0",
-    "dts-bundle": "^0.3.0",
     "gulp": "^3.8.11",
     "gulp-lab": "^1.0.5",
     "gulp-nodemon": "^2.0.3",
-    "gulp-tsc": "^1.1.1",
     "lab": "^5.8.0",
     "sinon": "^1.15.4",
     "tsd": "^0.6.3"

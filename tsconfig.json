@@ -30,6 +30,7 @@
         "test/unit-testing/test-sample-module/success-run.ts",
         "typings/bluebird/bluebird.d.ts",
         "typings/del/del.d.ts",
+        "typings/dts-bundle/dts-bundle.d.ts",
         "typings/glob/glob.d.ts",
         "typings/gulp-nodemon/gulp-nodemon.d.ts",
         "typings/gulp/gulp.d.ts",

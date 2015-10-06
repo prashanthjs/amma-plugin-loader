@@ -4,7 +4,6 @@ var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   path = require('path'),
   lab = require('gulp-lab'),
-  dts = require('dts-bundle'),
   tsd = require('tsd');
 
 
@@ -15,36 +14,6 @@ gulp.task('nodemon', function() {
     nodeArgs: [],
     ext: 'js,json,html',
     watch: ['**/*.js', '**/*.json', '**/*.html']
-  });
-});
-
-/**
- * Compile TypeScript and include references to library and app .d.ts files.
- */
-gulp.task('compile-ts', function() {
-  var sourceTsFiles = ['*[!node_modules]/**/*.ts',
-    './*.ts'
-  ];
-
-  var tsResult = gulp.src(sourceTsFiles)
-    .pipe(sourcemaps.init())
-    .pipe(tsc({
-      target: 'ES5',
-      module: 'commonjs',
-      declarationFiles: true,
-      noExternalResolve: true
-    }));
-
-  tsResult.dts.pipe(gulp.dest(config.tsOutputPath));
-  return tsResult.js
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./build/'));
-});
-
-gulp.task('tsd:build:definition', function() {
-  dts.bundle({
-    name: 'amma-plugin-loader',
-    main: 'build/index.d.ts'
   });
 });
 
