@@ -3,10 +3,8 @@ var _ = require('lodash');
 var Items = require('items');
 var ObjectPath = require('object-path');
 var PluginLoader = (function () {
-    function PluginLoader(_name, _config) {
+    function PluginLoader(_config) {
         var _this = this;
-        this._name = _name;
-        this._config = _config;
         this.register = function (server, options, next) {
             server.bind(_this);
             _this._server = server;
@@ -15,6 +13,7 @@ var PluginLoader = (function () {
             _this._loadRoutes();
             return _this._loadCallbacks(next);
         };
+        this._config = _config;
         this.register.attributes = this._config.attributes;
     }
     PluginLoader.prototype._loadServices = function () {

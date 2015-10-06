@@ -19,16 +19,23 @@ export interface IRegister {
   (server: Hapi.Server, options: any, next: (error?: any, result?: any) => any): void;
   attributes?: any;
 }
-
-export default class PluginLoader {
+export interface IPluginLoader {
+  register: IRegister;
+  getParsedObject(handler: any): any;
+  getFilteredArgument(argumentId: string): string;
+  isArgumentAService(arg: string): boolean;
+}
+export default class PluginLoader implements IPluginLoader {
 
   protected _server: Hapi.Server;
+  protected _config: IConfig;
 
-  constructor(protected _name: string, protected _config: IConfig) {
+  constructor(_config: IConfig) {
+    this._config = _config;
     this.register.attributes = this._config.attributes;
   }
 
-  public register: IRegister = (server, options, next) => {
+  register: IRegister = (server, options, next) => {
     server.bind(this);
     this._server = server;
     this._config = Hoek.merge(this._config, options);
@@ -79,7 +86,7 @@ export default class PluginLoader {
     }
   }
 
-  public getParsedObject(handler: any): any {
+  getParsedObject(handler: any): any {
     if (typeof handler === 'string' && this.isArgumentAService(handler)) {
       let serviceString = this.getFilteredArgument(handler);
       if (ObjectPath.has(this._server, serviceString)) {
@@ -89,11 +96,11 @@ export default class PluginLoader {
     return handler;
   }
 
-  public getFilteredArgument(argumentId: string): string {
+  getFilteredArgument(argumentId: string): string {
     return argumentId.replace(/%/g, '');
   }
 
-  public isArgumentAService(arg: string): boolean {
+  isArgumentAService(arg: string): boolean {
     if ((/^%[^%]+%$/.test(arg))) {
       return true;
     }

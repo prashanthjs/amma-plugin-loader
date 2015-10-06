@@ -1,3 +1,3 @@
 import Plugin = require('../../../index');
-declare let plugin: Plugin.PluginLoader;
+declare let plugin: Plugin.IPluginLoader;
 export = plugin;

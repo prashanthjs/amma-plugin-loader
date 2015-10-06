@@ -17,5 +17,5 @@ var config = {
         pkg: attributes
     }
 };
-var plugin = new PluginLoader('test-sample-module', config);
+var plugin = new PluginLoader(config);
 module.exports = plugin;

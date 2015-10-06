@@ -13,11 +13,16 @@ export interface IRegister {
     (server: Hapi.Server, options: any, next: (error?: any, result?: any) => any): void;
     attributes?: any;
 }
-export default class PluginLoader {
-    protected _name: string;
-    protected _config: IConfig;
+export interface IPluginLoader {
+    register: IRegister;
+    getParsedObject(handler: any): any;
+    getFilteredArgument(argumentId: string): string;
+    isArgumentAService(arg: string): boolean;
+}
+export default class PluginLoader implements IPluginLoader {
     protected _server: Hapi.Server;
-    constructor(_name: string, _config: IConfig);
+    protected _config: IConfig;
+    constructor(_config: IConfig);
     register: IRegister;
     protected _loadServices(): void;
     protected _loadRoutes(): void;
