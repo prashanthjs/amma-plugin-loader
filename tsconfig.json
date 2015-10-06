@@ -11,6 +11,7 @@
     "filesGlob": [
         "*.ts",
         "*[!node_modules]/**/*.ts",
+        "services/**/*.ts",
         "typings/**/*.ts"
     ],
     "files": [
