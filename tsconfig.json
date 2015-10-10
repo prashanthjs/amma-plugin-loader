@@ -12,13 +12,13 @@
         "*.ts",
         "*[!node_modules]/**/*.ts",
         "services/**/*.ts",
+        "test/**/*.ts",
         "typings/**/*.ts"
     ],
     "files": [
         "amma-plugin-loader.d.ts",
         "index.d.ts",
         "index.ts",
-        "missing.d.ts",
         "test/unit-testing/index.test.d.ts",
         "test/unit-testing/index.test.ts",
         "test/unit-testing/test-sample-module/controller.d.ts",
@@ -38,6 +38,7 @@
         "typings/hapi/hapi.d.ts",
         "typings/lodash/lodash.d.ts",
         "typings/minimatch/minimatch.d.ts",
+        "typings/missing.d.ts",
         "typings/node/node.d.ts",
         "typings/object-path/object-path.d.ts",
         "typings/orchestrator/orchestrator.d.ts",
