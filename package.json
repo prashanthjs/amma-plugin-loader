@@ -23,7 +23,7 @@
     "url": "https://github.com/prashanthjs/amma-plugin-loader/issues"
   },
   "scripts": {
-    "test": "lab -t -v -C"
+    "test": "lab -t 100 -v -C"
   },
   "dependencies": {
     "hapi": "^10.4.1",
