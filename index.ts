@@ -39,6 +39,7 @@ export default class PluginLoader implements IPluginLoader {
     server.bind(this);
     this._server = server;
     this._config = Hoek.merge(this._config, options);
+    this._server.expose('config', this._config);
     this._loadServices();
     this._loadRoutes();
     return this._loadCallbacks(next);

@@ -9,6 +9,7 @@ var PluginLoader = (function () {
             server.bind(_this);
             _this._server = server;
             _this._config = Hoek.merge(_this._config, options);
+            _this._server.expose('config', _this._config);
             _this._loadServices();
             _this._loadRoutes();
             return _this._loadCallbacks(next);
