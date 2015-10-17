@@ -12,9 +12,6 @@
     "amma-plugin-loader",
     "plugin-loader"
   ],
-  "typescript": {
-    "definition": "amma-plugin-loader.d.ts"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/prashanthjs/amma-plugin-loader.git"

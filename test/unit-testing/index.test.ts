@@ -33,7 +33,7 @@ suite('Plugin Loader', () => {
     let table = server.table();
     expect(table).to.have.length(1);
 
-    let options = {
+    let options: any = {
       method: 'GET',
       url: '/test'
     };

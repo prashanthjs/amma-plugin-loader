@@ -3,7 +3,7 @@
         "target": "es5",
         "module": "commonjs",
         "sourceMap": false,
-        "declaration": true,
+        "declaration": false,
         "noImplicitAny": false,
         "removeComments": false,
         "noLib": false
@@ -17,17 +17,11 @@
     ],
     "files": [
         "amma-plugin-loader.d.ts",
-        "index.d.ts",
         "index.ts",
-        "test/unit-testing/index.test.d.ts",
         "test/unit-testing/index.test.ts",
-        "test/unit-testing/test-sample-module/controller.d.ts",
         "test/unit-testing/test-sample-module/controller.ts",
-        "test/unit-testing/test-sample-module/failure-run.d.ts",
         "test/unit-testing/test-sample-module/failure-run.ts",
-        "test/unit-testing/test-sample-module/index.d.ts",
         "test/unit-testing/test-sample-module/index.ts",
-        "test/unit-testing/test-sample-module/success-run.d.ts",
         "test/unit-testing/test-sample-module/success-run.ts",
         "typings/bluebird/bluebird.d.ts",
         "typings/del/del.d.ts",
@@ -44,5 +38,6 @@
         "typings/orchestrator/orchestrator.d.ts",
         "typings/q/Q.d.ts",
         "typings/sinon/sinon.d.ts"
-    ]
+    ],
+    "exclude": []
 }

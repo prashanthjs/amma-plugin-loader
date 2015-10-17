@@ -7,6 +7,7 @@ import ObjectPath = require('object-path');
 export interface IConfig {
   options?: Object;
   services?: Object;
+  
   routes?: any[];
   runs?: any[];
   attributes: Object;
