@@ -61,6 +61,8 @@ suite('Plugin Loader', () => {
     });
   });
 
+
+
   suite('Load object paths', () => {
     test('Load handler is not a string', (next) => {
       var func = Sinon.spy();

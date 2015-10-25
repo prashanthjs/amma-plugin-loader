@@ -12,6 +12,7 @@ var PluginLoader = (function () {
             _this._server.expose('config', _this._config);
             _this._loadServices();
             _this._loadRoutes();
+            _this._loadListeners();
             return _this._loadCallbacks(next);
         };
         this._config = _config;
@@ -34,6 +35,16 @@ var PluginLoader = (function () {
             }
             this._config.routes = routes;
             this._server.route(routes);
+        }
+    };
+    PluginLoader.prototype._loadListeners = function () {
+        var listeners = this._config.listeners;
+        if (listeners && listeners.length) {
+            for (var i = 0; i < listeners.length; i++) {
+                var listener = listeners[i];
+                listener.method = this.getParsedObject(listener.method);
+                this._server.ext(listener.type, listener.method);
+            }
         }
     };
     PluginLoader.prototype._loadCallbacks = function (next) {

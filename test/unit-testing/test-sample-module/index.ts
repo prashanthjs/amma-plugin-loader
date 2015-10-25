@@ -13,6 +13,10 @@ let config: Plugin.IConfig = {
 			handler: '%plugins.test-sample-module.testController.test%'
 		}
 	}],
+	listeners: [{
+		type: 'onRequest',
+		method:  '%plugins.test-sample-module.testController.test%'
+	}],
 	attributes: {
 		pkg: attributes
 	}
