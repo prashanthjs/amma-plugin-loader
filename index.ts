@@ -4,7 +4,7 @@ import _ = require('lodash');
 import Items = require('items');
 import ObjectPath = require('object-path');
 
-export interface IListener{
+export interface IListener {
   type: string;
   method: any;
 }
@@ -14,7 +14,7 @@ export interface IConfig {
   services?: Object;
 
   routes?: any[];
-  listeners?:IListener[];
+  listeners?: IListener[];
   runs?: any[];
   attributes: Object;
 }
@@ -48,9 +48,12 @@ export default class PluginLoader implements IPluginLoader {
     this._config = Hoek.merge(this._config, options);
     this._server.expose('config', this._config);
     this._loadServices();
-    this._loadRoutes();
-    this._loadListeners();
-    return this._loadCallbacks(next);
+    this._loadCallbacks((err, next) => {
+      this._loadListeners();
+      this._loadRoutes();
+      next();
+    });
+
   }
 
   protected _loadServices(): void {
@@ -77,7 +80,7 @@ export default class PluginLoader implements IPluginLoader {
     let listeners = this._config.listeners;
     if (listeners && listeners.length) {
       for (let i = 0; i < listeners.length; i++) {
-        let listener:IListener = listeners[i];
+        let listener: IListener = listeners[i];
         listener.method = this.getParsedObject(listener.method);
         this._server.ext(listener.type, listener.method);
       }

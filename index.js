@@ -11,9 +11,11 @@ var PluginLoader = (function () {
             _this._config = Hoek.merge(_this._config, options);
             _this._server.expose('config', _this._config);
             _this._loadServices();
-            _this._loadRoutes();
-            _this._loadListeners();
-            return _this._loadCallbacks(next);
+            _this._loadCallbacks(function (err, next) {
+                _this._loadListeners();
+                _this._loadRoutes();
+                next();
+            });
         };
         this._config = _config;
         this.register.attributes = this._config.attributes;
