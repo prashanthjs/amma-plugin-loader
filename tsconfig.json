@@ -1,43 +1,43 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "sourceMap": false,
-        "declaration": false,
-        "noImplicitAny": false,
-        "removeComments": false,
-        "noLib": false
-    },
-    "filesGlob": [
-        "*.ts",
-        "*[!node_modules]/**/*.ts",
-        "services/**/*.ts",
-        "test/**/*.ts",
-        "typings/**/*.ts"
-    ],
-    "files": [
-        "amma-plugin-loader.d.ts",
-        "index.ts",
-        "test/unit-testing/index.test.ts",
-        "test/unit-testing/test-sample-module/controller.ts",
-        "test/unit-testing/test-sample-module/failure-run.ts",
-        "test/unit-testing/test-sample-module/index.ts",
-        "test/unit-testing/test-sample-module/success-run.ts",
-        "typings/bluebird/bluebird.d.ts",
-        "typings/del/del.d.ts",
-        "typings/dts-bundle/dts-bundle.d.ts",
-        "typings/glob/glob.d.ts",
-        "typings/gulp-nodemon/gulp-nodemon.d.ts",
-        "typings/gulp/gulp.d.ts",
-        "typings/hapi/hapi.d.ts",
-        "typings/lodash/lodash.d.ts",
-        "typings/minimatch/minimatch.d.ts",
-        "typings/missing.d.ts",
-        "typings/node/node.d.ts",
-        "typings/object-path/object-path.d.ts",
-        "typings/orchestrator/orchestrator.d.ts",
-        "typings/q/Q.d.ts",
-        "typings/sinon/sinon.d.ts"
-    ],
-    "exclude": []
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": false,
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noLib": false
+  },
+  "filesGlob": [
+    "*.ts",
+    "*[!node_modules]/**/*.ts",
+    "services/**/*.ts",
+    "test/**/*.ts",
+    "typings/**/*.ts"
+  ],
+  "files": [
+    "amma-plugin-loader.d.ts",
+    "index.ts",
+    "test/unit-testing/index.test.ts",
+    "test/unit-testing/test-sample-module/controller.ts",
+    "test/unit-testing/test-sample-module/failure-run.ts",
+    "test/unit-testing/test-sample-module/index.ts",
+    "test/unit-testing/test-sample-module/success-run.ts",
+    "typings/bluebird/bluebird.d.ts",
+    "typings/del/del.d.ts",
+    "typings/dts-bundle/dts-bundle.d.ts",
+    "typings/glob/glob.d.ts",
+    "typings/gulp-nodemon/gulp-nodemon.d.ts",
+    "typings/gulp/gulp.d.ts",
+    "typings/hapi/hapi.d.ts",
+    "typings/lodash/lodash.d.ts",
+    "typings/minimatch/minimatch.d.ts",
+    "typings/missing.d.ts",
+    "typings/node/node.d.ts",
+    "typings/object-path/object-path.d.ts",
+    "typings/orchestrator/orchestrator.d.ts",
+    "typings/q/Q.d.ts",
+    "typings/sinon/sinon.d.ts"
+  ],
+  "exclude": []
 }

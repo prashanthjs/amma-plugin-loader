@@ -3,7 +3,7 @@
 // Definitions by: Paulo Cesar <https://github.com/pocesar/>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-declare var objectPath: ObjectPathGlobal.IObjectPathStatic;
+declare var objectPath:ObjectPathGlobal.IObjectPathStatic;
 
 declare module ObjectPathGlobal {
 
@@ -14,7 +14,7 @@ declare module ObjectPathGlobal {
         /**
          * Binds an object
          */
-        <T extends {}>(object: T): IObjectPathBound<T>;
+        <T extends {}>(object:T): IObjectPathBound<T>;
 
         /*======== Del =========*/
 
@@ -24,11 +24,11 @@ declare module ObjectPathGlobal {
          * @param {string[]|string} path
          * @return object
          */
-        del<T extends {}>(object: T, path: IPath): T;
+        del<T extends {}>(object:T, path:IPath): T;
         /**
          * @see objectPath.del
          */
-        del<T extends {}>(object: T):T;
+        del<T extends {}>(object:T):T;
         /**
          * @see objectPath.del
          */
@@ -41,11 +41,11 @@ declare module ObjectPathGlobal {
          * @param {string[]|string} path
          * @return object
          */
-        has<T extends {}>(object: T, path: IPath): boolean;
+        has<T extends {}>(object:T, path:IPath): boolean;
         /**
          * @see objectPath.has
          */
-        has<T extends {}>(object: T): boolean;
+        has<T extends {}>(object:T): boolean;
         /**
          * @see objectPath.has
          */
@@ -58,11 +58,11 @@ declare module ObjectPathGlobal {
          * @param {string|string[]|number|number[]} path
          * @param {*} [defaultValue=undefined]
          */
-        get<T extends {}, TResult>(object: T, path: IPath, defaultValue?: TResult): TResult;
+        get<T extends {}, TResult>(object:T, path:IPath, defaultValue?:TResult): TResult;
         /**
          * @see objectPath.get
          */
-        get<T extends {}>(object: T): T;
+        get<T extends {}>(object:T): T;
         /**
          * @see objectPath.get
          */
@@ -77,11 +77,11 @@ declare module ObjectPathGlobal {
          * @param {boolean} [doNotReplace=false]
          * @return Any existing value on the path if any
          */
-        set<T extends {}, TExisting>(object: T, path: IPath, value: any, doNotReplace?:boolean): TExisting;
+        set<T extends {}, TExisting>(object:T, path:IPath, value:any, doNotReplace?:boolean): TExisting;
         /**
          * @see objectPath.set
          */
-        set<T extends {}>(object: T): T;
+        set<T extends {}>(object:T): T;
         /**
          * @see objectPath.set
          */
@@ -92,7 +92,7 @@ declare module ObjectPathGlobal {
          * Create (if path isn't an array) and push the value to it. Can push unlimited number of values
          * @param {object} object
          */
-        push<T extends {}>(object: T, path: IPath, ...args:any[]):void;
+        push<T extends {}>(object:T, path:IPath, ...args:any[]):void;
         /**
          * @see objectPath.push
          */
@@ -106,7 +106,7 @@ declare module ObjectPathGlobal {
          * @param {*} defaultValue
          * @return {*}
          */
-        coalesce<T extends {}, TResult>(object: T, paths: IMultiArray, defaultValue?: TResult):TResult;
+        coalesce<T extends {}, TResult>(object:T, paths:IMultiArray, defaultValue?:TResult):TResult;
 
         /*======== Empty =========*/
         /**
@@ -115,11 +115,11 @@ declare module ObjectPathGlobal {
          * @param {object} object
          * @param {string|string[]|number[]} path
          */
-        empty<T extends {}, TResult>(object: T, path: IPath):TResult;
+        empty<T extends {}, TResult>(object:T, path:IPath):TResult;
         /**
          * @see objectPath.empty
          */
-        empty<T extends {}>(object: T):T;
+        empty<T extends {}>(object:T):T;
         /**
          * @see objectPath.empty
          */
@@ -131,11 +131,11 @@ declare module ObjectPathGlobal {
          * @param {object} object
          * @param {string|string[]|number|number[]} path
          */
-        ensureExists<T extends {}, TExisting>(object: T, path: IPath, value: any):TExisting;
+        ensureExists<T extends {}, TExisting>(object:T, path:IPath, value:any):TExisting;
         /**
          * @see objectPath.ensureExists
          */
-        ensureExists<T extends {}>(object: T): T;
+        ensureExists<T extends {}>(object:T): T;
         /**
          * @see objectPath.ensureExists
          */
@@ -149,7 +149,7 @@ declare module ObjectPathGlobal {
          * @param {*} value
          * @param {number} [at=0]
          */
-        insert<T extends {}>(object: T, path: IPath, value: any, at?: number):void;
+        insert<T extends {}>(object:T, path:IPath, value:any, at?:number):void;
     }
 
     interface IObjectPathBound<T extends {}> {
@@ -158,7 +158,7 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.ensureExists
          */
-        del(path: IPath): T;
+        del(path:IPath): T;
         /**
          * @see objectPath.del
          */
@@ -168,7 +168,7 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.ensureExists
          */
-        has(path: IPath): boolean;
+        has(path:IPath): boolean;
         /**
          * @see objectPath.has
          */
@@ -178,7 +178,7 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.ensureExists
          */
-        get<TResult>(path: IPath, defaultValue?: TResult): TResult;
+        get<TResult>(path:IPath, defaultValue?:TResult): TResult;
         /**
          * @see objectPath.get
          */
@@ -188,7 +188,7 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.ensureExists
          */
-        set<TExisting>(path: IPath, value: any, doNotReplace?:boolean): TExisting;
+        set<TExisting>(path:IPath, value:any, doNotReplace?:boolean): TExisting;
         /**
          * @see objectPath.set
          */
@@ -198,7 +198,7 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.ensureExists
          */
-        push(path: IPath, ...args:any[]):void;
+        push(path:IPath, ...args:any[]):void;
         /**
          * @see objectPath.push
          */
@@ -208,13 +208,13 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.ensureExists
          */
-        coalesce<TResult>(paths: IMultiArray, defaultValue?: TResult):TResult;
+        coalesce<TResult>(paths:IMultiArray, defaultValue?:TResult):TResult;
 
         /*======== Empty =========*/
         /**
          * @see objectPath.ensureExists
          */
-        empty(path: IPath):T;
+        empty(path:IPath):T;
         /**
          * @see objectPath.empty
          */
@@ -224,7 +224,7 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.ensureExists
          */
-        ensureExists<TExisting>(path: IPath, value: any):TExisting;
+        ensureExists<TExisting>(path:IPath, value:any):TExisting;
         /**
          * @see objectPath.ensureExists
          */
@@ -234,7 +234,7 @@ declare module ObjectPathGlobal {
         /**
          * @see objectPath.insert
          */
-        insert(path: IPath, value: any, at?: number):void;
+        insert(path:IPath, value:any, at?:number):void;
     }
 }
 

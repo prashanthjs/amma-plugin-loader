@@ -9,11 +9,11 @@ declare module "gulp-nodemon" {
     namespace nodemon {
 
         interface Nodemon {
-            (option?: Option): EventEmitter;
+            (option?:Option): EventEmitter;
         }
 
         interface Option extends _Option {
-            tasks?: string[]|((changedFiles: string[]) => string[]);
+            tasks?: string[]|((changedFiles:string[]) => string[]);
         }
 
         // TODO: Properties may be insufficient
@@ -72,16 +72,16 @@ declare module "gulp-nodemon" {
         }
 
         interface EventEmitter extends NodeJS.EventEmitter {
-            addListener(event: string, listener: Function): EventEmitter;
-            addListener(event: string, tasks: string[]): EventEmitter;
-            on(event: string, listener: Function): EventEmitter;
-            on(event: string, tasks: string[]): EventEmitter;
-            once(event: string, listener: Function): EventEmitter;
-            once(event: string, tasks: string[]): EventEmitter;
+            addListener(event:string, listener:Function): EventEmitter;
+            addListener(event:string, tasks:string[]): EventEmitter;
+            on(event:string, listener:Function): EventEmitter;
+            on(event:string, tasks:string[]): EventEmitter;
+            once(event:string, listener:Function): EventEmitter;
+            once(event:string, tasks:string[]): EventEmitter;
         }
     }
 
-    var nodemon: nodemon.Nodemon;
+    var nodemon:nodemon.Nodemon;
 
     export = nodemon;
 }

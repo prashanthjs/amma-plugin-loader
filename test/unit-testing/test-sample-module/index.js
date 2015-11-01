@@ -7,16 +7,16 @@ var config = {
         'testController': testController.default
     },
     routes: [{
-            method: 'GET',
-            path: '/test',
-            config: {
-                handler: '%plugins.test-sample-module.testController.test%'
-            }
-        }],
+        method: 'GET',
+        path: '/test',
+        config: {
+            handler: '%plugins.test-sample-module.testController.test%'
+        }
+    }],
     listeners: [{
-            type: 'onRequest',
-            method: '%plugins.test-sample-module.testController.test%'
-        }],
+        type: 'onRequest',
+        method: '%plugins.test-sample-module.testController.test%'
+    }],
     attributes: {
         pkg: attributes
     }

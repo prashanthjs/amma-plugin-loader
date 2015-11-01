@@ -19,5 +19,5 @@ declare module "dts-bundle" {
         verbose?: boolean;
     }
 
-    export function bundle(opts: Options): void;
+    export function bundle(opts:Options):void;
 }

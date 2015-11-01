@@ -8,9 +8,9 @@ var FailureSampleModule = require('./test-sample-module/failure-run');
 var lab = exports.lab = Lab.script(), before = lab.before, beforeEach = lab.beforeEach, afterEach = lab.afterEach, after = lab.after, expect = Code.expect, suite = lab.suite, test = lab.test;
 suite('Plugin Loader', function () {
     var server = new Hapi.Server();
-    server.connection({ port: 15000 });
+    server.connection({port: 15000});
     test('Load file', function (next) {
-        server.register({ register: TestSampleModule }, function (err) {
+        server.register({register: TestSampleModule}, function (err) {
             expect(err).to.equal(undefined);
             next();
         });
@@ -36,14 +36,14 @@ suite('Plugin Loader', function () {
     suite('Load runs', function () {
         test('Load success run', function (next) {
             var server = new Hapi.Server();
-            server.register({ register: SuccessSampleModule }, function (err) {
+            server.register({register: SuccessSampleModule}, function (err) {
                 expect(err).to.equal(undefined);
                 next();
             });
         });
         test('Load failure run', function (next) {
             var server = new Hapi.Server();
-            server.register({ register: FailureSampleModule }, function (err) {
+            server.register({register: FailureSampleModule}, function (err) {
                 expect(err).to.be.exist();
                 next();
             });

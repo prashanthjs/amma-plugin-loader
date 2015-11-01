@@ -11,15 +11,21 @@ var PluginLoader = (function () {
             _this._config = Hoek.merge(_this._config, options);
             _this._server.expose('config', _this._config);
             _this._loadServices();
-            _this._loadCallbacks(function (err, next) {
-                _this._loadListeners();
-                _this._loadRoutes();
-                next();
+            _this._loadCallbacks(function (err) {
+                if(err){
+                    next(err);
+                }
+                else {
+                    _this._loadListeners();
+                    _this._loadRoutes();
+                    next();
+                }
             });
         };
         this._config = _config;
         this.register.attributes = this._config.attributes;
     }
+
     PluginLoader.prototype._loadServices = function () {
         var _this = this;
         var services = this._config.services;
@@ -91,5 +97,5 @@ var PluginLoader = (function () {
     };
     return PluginLoader;
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {value: true});
 exports.default = PluginLoader;

@@ -1,6 +1,7 @@
 var TestController = (function () {
     function TestController() {
     }
+
     TestController.prototype.test = function (request, reply) {
         return reply({});
     };
@@ -12,5 +13,5 @@ var TestController = (function () {
     };
     return TestController;
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {value: true});
 exports.default = TestController;
